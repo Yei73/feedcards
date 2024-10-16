@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "784526488308",
+    "project_id": "feedcards",
+    "storage_bucket": "feedcards.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784526488308:android:491ba005ab17f856f9e4a1",
+        "android_client_info": {
+          "package_name": "com.example.feedcards"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSXftbuEJj3p7pNC4Hmr10r8pydPtd-Zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:784526488308:android:8787eb2d260cdc2ff9e4a1",
+        "android_client_info": {
+          "package_name": "com.unisabaneta.app"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCSXftbuEJj3p7pNC4Hmr10r8pydPtd-Zo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
