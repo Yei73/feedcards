@@ -5,9 +5,10 @@ import 'package:feedcards/widgets/titlecard.dart';
 import 'package:flutter/material.dart';
 
 class card extends StatelessWidget {
-  const card({super.key, required this.data});
+  const card({super.key, required this.data, required this.documentId});
 
   final Map<String, dynamic> data; // Cambiar a Map<String, dynamic>
+  final String documentId; // El ID del documento en Firebase
 
   @override
   Widget build(BuildContext context) {
@@ -23,7 +24,10 @@ class card extends StatelessWidget {
           children: [
             Container(
               padding: const EdgeInsets.all(10),
-              child: Titlecard(name: data["publisher"] ?? "Sin nombre"),
+              child: Titlecard(
+                name: data["publisher"] ?? "Sin nombre",
+                documentId: documentId,
+              ),
             ),
             descriptioncard(
                 description: data["description"] ?? "Sin descripción"),
