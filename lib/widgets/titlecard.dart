@@ -14,7 +14,18 @@ class Titlecard extends StatelessWidget {
           .spaceBetween, // Asegura que el icono esté a la derecha
       children: [
         CircleAvatar(
-          child: Text("Y"),
+          // Obtiene la primera letra del nombre y la muestra en el CircleAvatar
+          child: Text(
+            name.isNotEmpty
+                ? name[0].toUpperCase()
+                : '', // Toma la primera letra y la convierte a mayúscula
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+            ),
+          ),
+          backgroundColor:
+              Colors.blue, // Puedes cambiar el color de fondo si lo deseas
         ),
         SizedBox(
           width: 10,

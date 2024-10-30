@@ -20,15 +20,23 @@ FirebaseFirestore db = FirebaseFirestore.instance;
 Future<List<Map<String, dynamic>>> getPublish() async {
   List<Map<String, dynamic>> publish = [];
 
-  CollectionReference collectionReferencePublish = db.collection('Publication');
+  try {
+    CollectionReference collectionReferencePublish =
+        db.collection('Publication');
 
-  QuerySnapshot queryPublish = await collectionReferencePublish.get();
+    // Ordena por el campo 'Date' en orden descendente
+    QuerySnapshot queryPublish = await collectionReferencePublish
+        .orderBy('Date', descending: true)
+        .get();
 
-  queryPublish.docs.forEach((documento) {
-    Map<String, dynamic> data = documento.data() as Map<String, dynamic>;
-    data['id'] = documento.id; // Agrega el documentId a los datos
-    publish.add(data);
-  });
+    for (var documento in queryPublish.docs) {
+      Map<String, dynamic> data = documento.data() as Map<String, dynamic>;
+      data['id'] = documento.id; // Agrega el documentId a los datos
+      publish.add(data);
+    }
+  } catch (e) {
+    print("Error al obtener los documentos: $e");
+  }
 
   return publish;
 }
